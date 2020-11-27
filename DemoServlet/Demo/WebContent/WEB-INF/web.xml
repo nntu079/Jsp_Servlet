@@ -24,4 +24,24 @@
   	<url-pattern>/demo</url-pattern>	
   </servlet-mapping>
   
+  
+  <servlet>
+  <servlet-name>TuDepTrai</servlet-name>
+  <servlet-class>Tu.ServletConfig</servlet-class>
+  <init-param>
+  	<param-name>Diem</param-name>
+  	<param-value>100</param-value>
+  </init-param>
+    <init-param>
+  	<param-name>Tu</param-name>
+  	<param-value>dep trai</param-value>
+  </init-param>
+  </servlet>
+
+  <servlet-mapping>
+  	<servlet-name>TuDepTrai</servlet-name>
+  	<url-pattern>/test-config2</url-pattern>	
+  </servlet-mapping>
+ 
+  
 </web-app>
