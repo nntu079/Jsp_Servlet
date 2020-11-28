@@ -10,6 +10,21 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+  <!-- Lưu các thông tin toàn cục -->
+  <context-param>
+  	<param-name>jdbc</param-name>
+  	<param-value>mysql</param-value>
+  </context-param>
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/error</location>
+  </error-page>
+  
+  <error-page>
+  	<exception-type>java.io.IOException</exception-type>
+  	<location>/error</location>
+  </error-page>
   
   <servlet>
   	<!-- Dat gi cung duoc -->
@@ -17,7 +32,6 @@
   	<!-- Ctrl va click vao neu duoc la OK -->
   	<servlet-class>Tu.DemoServlet</servlet-class>
   </servlet>
-  
   <!-- Map cai ten duong dan tren trinh duyet voi class -->
   <servlet-mapping>
   	<servlet-name>TuDaiCa</servlet-name>
@@ -37,11 +51,19 @@
   	<param-value>dep trai</param-value>
   </init-param>
   </servlet>
-
   <servlet-mapping>
   	<servlet-name>TuDepTrai</servlet-name>
   	<url-pattern>/test-config2</url-pattern>	
   </servlet-mapping>
  
+ 	<filter>
+ 		<filter-name>logger</filter-name>
+ 		<filter-class>Filter.Logger</filter-class>
+ 	</filter>
+  	<filter-mapping>
+  	<filter-name>logger</filter-name>
+  	<url-pattern>/servlet1</url-pattern>
+  	</filter-mapping>
+  
   
 </web-app>

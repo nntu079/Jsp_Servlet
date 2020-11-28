@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,6 +32,12 @@ public class RequestServlet extends HttpServlet {
 		
 		System.out.println(req.getMethod());
 		System.out.println(req.getParameter("name"));
+		
+		Cookie cookie= new Cookie("name",req.getParameter("name"));
+		cookie.setMaxAge(5);
+		
+		res.addCookie(cookie);
+		
 	}
 	
 }

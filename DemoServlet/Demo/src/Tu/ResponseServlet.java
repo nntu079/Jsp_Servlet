@@ -23,7 +23,6 @@ public class ResponseServlet extends HttpServlet {
 		
 		printWriter.println("<h1>Xin chao</h1>");
 		
-		res.addCookie(new Cookie("a","a")); //them cookie cho client
 		res.addHeader("Tu", "Dep trai");
 		res.sendError(200); //200 la noi dung tra ve thanh cong nho truyen luon ma code vi du 401 noi nguoi dung chua authentication
 		
